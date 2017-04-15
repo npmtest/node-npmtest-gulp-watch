@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <title>Code coverage report for node-npmtest-gulp-watch/gulp-watch/index.js</title>
     <meta charset="utf-8">
     <style>
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-gulp-watch/gulp-watch/</a> &#187; index.js</div>
+    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-gulp-watch/gulp-watch/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -580,154 +578,154 @@ var pathIsAbsolute = require('path-is-absolute');
 var globParent = require('glob-parent');
 var slash = require('slash');
 &nbsp;
-<span class="fstat-no" title="function not covered" >function normalizeGlobs(globs) {</span>
-<span class="cstat-no" title="statement not covered" >	if (!globs) {</span>
-<span class="cstat-no" title="statement not covered" >		throw new PluginError('gulp-watch', 'glob argument required');</span>
+<span class="fstat-no" title="function not covered">function normalizeGlobs(globs) {</span>
+<span class="cstat-no" title="statement not covered">	if (!globs) {</span>
+<span class="cstat-no" title="statement not covered">		throw new PluginError('gulp-watch', 'glob argument required');</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (typeof globs === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >		globs = [globs];</span>
+<span class="cstat-no" title="statement not covered">	if (typeof globs === 'string') {</span>
+<span class="cstat-no" title="statement not covered">		globs = [globs];</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (!Array.isArray(globs)) {</span>
-<span class="cstat-no" title="statement not covered" >		throw new PluginError('gulp-watch', 'glob should be String or Array, not ' + (typeof globs));</span>
+<span class="cstat-no" title="statement not covered">	if (!Array.isArray(globs)) {</span>
+<span class="cstat-no" title="statement not covered">		throw new PluginError('gulp-watch', 'glob should be String or Array, not ' + (typeof globs));</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return globs;</span>
+<span class="cstat-no" title="statement not covered">	return globs;</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function watch(globs, opts, cb) {</span>
-<span class="cstat-no" title="statement not covered" >	var originalGlobs = globs;</span>
-<span class="cstat-no" title="statement not covered" >	globs = normalizeGlobs(globs);</span>
+<span class="fstat-no" title="function not covered">function watch(globs, opts, cb) {</span>
+<span class="cstat-no" title="statement not covered">	var originalGlobs = globs;</span>
+<span class="cstat-no" title="statement not covered">	globs = normalizeGlobs(globs);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	if (typeof opts === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >		cb = opts;</span>
-<span class="cstat-no" title="statement not covered" >		opts = {};</span>
+<span class="cstat-no" title="statement not covered">	if (typeof opts === 'function') {</span>
+<span class="cstat-no" title="statement not covered">		cb = opts;</span>
+<span class="cstat-no" title="statement not covered">		opts = {};</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	opts = assign({}, watch._defaultOptions, opts);</span>
-<span class="cstat-no" title="statement not covered" >	cb = cb || <span class="fstat-no" title="function not covered" >function () {</span>};</span>
+<span class="cstat-no" title="statement not covered">	opts = assign({}, watch._defaultOptions, opts);</span>
+<span class="cstat-no" title="statement not covered">	cb = cb || <span class="fstat-no" title="function not covered">function () {</span>};</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function resolveFilepath(filepath) {</span>
-<span class="cstat-no" title="statement not covered" >		if (pathIsAbsolute(filepath)) {</span>
-<span class="cstat-no" title="statement not covered" >			return path.normalize(filepath);</span>
+<span class="fstat-no" title="function not covered">	function resolveFilepath(filepath) {</span>
+<span class="cstat-no" title="statement not covered">		if (pathIsAbsolute(filepath)) {</span>
+<span class="cstat-no" title="statement not covered">			return path.normalize(filepath);</span>
 		}
-<span class="cstat-no" title="statement not covered" >		return path.resolve(opts.cwd || process.cwd(), filepath);</span>
+<span class="cstat-no" title="statement not covered">		return path.resolve(opts.cwd || process.cwd(), filepath);</span>
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function resolveGlob(glob) {</span>
-<span class="cstat-no" title="statement not covered" >		var mod = '';</span>
+<span class="fstat-no" title="function not covered">	function resolveGlob(glob) {</span>
+<span class="cstat-no" title="statement not covered">		var mod = '';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (glob[0] === '!') {</span>
-<span class="cstat-no" title="statement not covered" >			mod = glob[0];</span>
-<span class="cstat-no" title="statement not covered" >			glob = glob.slice(1);</span>
+<span class="cstat-no" title="statement not covered">		if (glob[0] === '!') {</span>
+<span class="cstat-no" title="statement not covered">			mod = glob[0];</span>
+<span class="cstat-no" title="statement not covered">			glob = glob.slice(1);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		return mod + slash(resolveFilepath(glob));</span>
+<span class="cstat-no" title="statement not covered">		return mod + slash(resolveFilepath(glob));</span>
 	}
-<span class="cstat-no" title="statement not covered" >	globs = globs.map(resolveGlob);</span>
+<span class="cstat-no" title="statement not covered">	globs = globs.map(resolveGlob);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var baseForced = Boolean(opts.base);</span>
-<span class="cstat-no" title="statement not covered" >	var outputStream = new Duplex({objectMode: true, allowHalfOpen: true});</span>
+<span class="cstat-no" title="statement not covered">	var baseForced = Boolean(opts.base);</span>
+<span class="cstat-no" title="statement not covered">	var outputStream = new Duplex({objectMode: true, allowHalfOpen: true});</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	outputStream._write = <span class="fstat-no" title="function not covered" >function _write(file, enc, done) {</span></span>
-<span class="cstat-no" title="statement not covered" >		cb(file);</span>
-<span class="cstat-no" title="statement not covered" >		this.push(file);</span>
-<span class="cstat-no" title="statement not covered" >		done();</span>
+<span class="cstat-no" title="statement not covered">	outputStream._write = <span class="fstat-no" title="function not covered">function _write(file, enc, done) {</span></span>
+<span class="cstat-no" title="statement not covered">		cb(file);</span>
+<span class="cstat-no" title="statement not covered">		this.push(file);</span>
+<span class="cstat-no" title="statement not covered">		done();</span>
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	outputStream._read = <span class="fstat-no" title="function not covered" >function _read() {</span> };</span>
+<span class="cstat-no" title="statement not covered">	outputStream._read = <span class="fstat-no" title="function not covered">function _read() {</span> };</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var watcher = chokidar.watch(globs, opts);</span>
+<span class="cstat-no" title="statement not covered">	var watcher = chokidar.watch(globs, opts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	opts.events.forEach(<span class="fstat-no" title="function not covered" >function (ev) {</span></span>
-<span class="cstat-no" title="statement not covered" >		watcher.on(ev, processEvent.bind(undefined, ev));</span>
+<span class="cstat-no" title="statement not covered">	opts.events.forEach(<span class="fstat-no" title="function not covered">function (ev) {</span></span>
+<span class="cstat-no" title="statement not covered">		watcher.on(ev, processEvent.bind(undefined, ev));</span>
 	});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	['add', 'change', 'unlink', 'addDir', 'unlinkDir', 'error', 'ready', 'raw']</span>
-		.forEach(<span class="fstat-no" title="function not covered" >function (ev) {</span>
-<span class="cstat-no" title="statement not covered" >			watcher.on(ev, outputStream.emit.bind(outputStream, ev));</span>
+<span class="cstat-no" title="statement not covered">	['add', 'change', 'unlink', 'addDir', 'unlinkDir', 'error', 'ready', 'raw']</span>
+		.forEach(<span class="fstat-no" title="function not covered">function (ev) {</span>
+<span class="cstat-no" title="statement not covered">			watcher.on(ev, outputStream.emit.bind(outputStream, ev));</span>
 		});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	outputStream.add = <span class="fstat-no" title="function not covered" >function add(newGlobs) {</span></span>
-<span class="cstat-no" title="statement not covered" >		newGlobs = normalizeGlobs(newGlobs)</span>
+<span class="cstat-no" title="statement not covered">	outputStream.add = <span class="fstat-no" title="function not covered">function add(newGlobs) {</span></span>
+<span class="cstat-no" title="statement not covered">		newGlobs = normalizeGlobs(newGlobs)</span>
 			.map(resolveGlob);
-<span class="cstat-no" title="statement not covered" >		watcher.add(newGlobs);</span>
-<span class="cstat-no" title="statement not covered" >		globs.push.apply(globs, newGlobs);</span>
+<span class="cstat-no" title="statement not covered">		watcher.add(newGlobs);</span>
+<span class="cstat-no" title="statement not covered">		globs.push.apply(globs, newGlobs);</span>
 	};
-<span class="cstat-no" title="statement not covered" >	outputStream.unwatch = watcher.unwatch.bind(watcher);</span>
-<span class="cstat-no" title="statement not covered" >	outputStream.close = <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >		watcher.close();</span>
-<span class="cstat-no" title="statement not covered" >		this.emit('end');</span>
+<span class="cstat-no" title="statement not covered">	outputStream.unwatch = watcher.unwatch.bind(watcher);</span>
+<span class="cstat-no" title="statement not covered">	outputStream.close = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">		watcher.close();</span>
+<span class="cstat-no" title="statement not covered">		this.emit('end');</span>
 	};
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function processEvent(event, filepath) {</span>
-<span class="cstat-no" title="statement not covered" >		filepath = resolveFilepath(filepath);</span>
-<span class="cstat-no" title="statement not covered" >		var fileOpts = assign({}, opts);</span>
+<span class="fstat-no" title="function not covered">	function processEvent(event, filepath) {</span>
+<span class="cstat-no" title="statement not covered">		filepath = resolveFilepath(filepath);</span>
+<span class="cstat-no" title="statement not covered">		var fileOpts = assign({}, opts);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var glob;</span>
-<span class="cstat-no" title="statement not covered" >		var currentFilepath = filepath;</span>
-<span class="cstat-no" title="statement not covered" >		while (!(glob = globs[anymatch(globs, currentFilepath, true)]) &amp;&amp; currentFilepath !== (currentFilepath = path.dirname(currentFilepath))) {} </span>// eslint-disable-line no-empty-blocks/no-empty-blocks
+<span class="cstat-no" title="statement not covered">		var glob;</span>
+<span class="cstat-no" title="statement not covered">		var currentFilepath = filepath;</span>
+<span class="cstat-no" title="statement not covered">		while (!(glob = globs[anymatch(globs, currentFilepath, true)]) &amp;&amp; currentFilepath !== (currentFilepath = path.dirname(currentFilepath))) {} </span>// eslint-disable-line no-empty-blocks/no-empty-blocks
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (!glob) {</span>
-<span class="cstat-no" title="statement not covered" >			util.log(</span>
+<span class="cstat-no" title="statement not covered">		if (!glob) {</span>
+<span class="cstat-no" title="statement not covered">			util.log(</span>
 				util.colors.cyan('[gulp-watch]'),
 				util.colors.yellow('Watched unexpected path. This is likely a bug. Please open this link to report the issue:\n') +
 				'https://github.com/floatdrop/gulp-watch/issues/new?title=' +
 				encodeURIComponent('Watched unexpected filepath') + '&amp;body=' +
 				encodeURIComponent('Node.js version: `' + process.version + ' ' + process.platform + ' ' + process.arch + '`\ngulp-watch version: `' + require('./package.json').version + '`\nGlobs: `' + JSON.stringify(originalGlobs) + '`\nFilepath: `' + filepath + '`\nEvent: `' + event + '`\nProcess CWD: `' + process.cwd() + '`\nOptions:\n```js\n' + JSON.stringify(opts, null, 2) + '\n```')
 			);
-<span class="cstat-no" title="statement not covered" >			return;</span>
+<span class="cstat-no" title="statement not covered">			return;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (!baseForced) {</span>
-<span class="cstat-no" title="statement not covered" >			fileOpts.base = path.normalize(globParent(glob));</span>
+<span class="cstat-no" title="statement not covered">		if (!baseForced) {</span>
+<span class="cstat-no" title="statement not covered">			fileOpts.base = path.normalize(globParent(glob));</span>
 		}
 &nbsp;
 		// Do not stat deleted files
-<span class="cstat-no" title="statement not covered" >		if (event === 'unlink' || event === 'unlinkDir') {</span>
-<span class="cstat-no" title="statement not covered" >			fileOpts.path = filepath;</span>
+<span class="cstat-no" title="statement not covered">		if (event === 'unlink' || event === 'unlinkDir') {</span>
+<span class="cstat-no" title="statement not covered">			fileOpts.path = filepath;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			write(event, null, new File(fileOpts));</span>
-<span class="cstat-no" title="statement not covered" >			return;</span>
+<span class="cstat-no" title="statement not covered">			write(event, null, new File(fileOpts));</span>
+<span class="cstat-no" title="statement not covered">			return;</span>
 		}
 &nbsp;
 		// Workaround for early read
-<span class="cstat-no" title="statement not covered" >		setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >			vinyl.read(filepath, fileOpts).then(<span class="fstat-no" title="function not covered" >function (file) {</span></span>
-<span class="cstat-no" title="statement not covered" >				write(event, null, file);</span>
+<span class="cstat-no" title="statement not covered">		setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">			vinyl.read(filepath, fileOpts).then(<span class="fstat-no" title="function not covered">function (file) {</span></span>
+<span class="cstat-no" title="statement not covered">				write(event, null, file);</span>
 			});
 		}, opts.readDelay);
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function write(event, err, file) {</span>
-<span class="cstat-no" title="statement not covered" >		if (err) {</span>
-<span class="cstat-no" title="statement not covered" >			outputStream.emit('error', err);</span>
-<span class="cstat-no" title="statement not covered" >			return;</span>
+<span class="fstat-no" title="function not covered">	function write(event, err, file) {</span>
+<span class="cstat-no" title="statement not covered">		if (err) {</span>
+<span class="cstat-no" title="statement not covered">			outputStream.emit('error', err);</span>
+<span class="cstat-no" title="statement not covered">			return;</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (opts.verbose) {</span>
-<span class="cstat-no" title="statement not covered" >			log(event, file);</span>
+<span class="cstat-no" title="statement not covered">		if (opts.verbose) {</span>
+<span class="cstat-no" title="statement not covered">			log(event, file);</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		file.event = event;</span>
-<span class="cstat-no" title="statement not covered" >		outputStream.push(file);</span>
-<span class="cstat-no" title="statement not covered" >		cb(file);</span>
+<span class="cstat-no" title="statement not covered">		file.event = event;</span>
+<span class="cstat-no" title="statement not covered">		outputStream.push(file);</span>
+<span class="cstat-no" title="statement not covered">		cb(file);</span>
 	}
 &nbsp;
-<span class="fstat-no" title="function not covered" >	function log(event, file) {</span>
-<span class="cstat-no" title="statement not covered" >		event = event[event.length - 1] === 'e' ? event + 'd' : event + 'ed';</span>
+<span class="fstat-no" title="function not covered">	function log(event, file) {</span>
+<span class="cstat-no" title="statement not covered">		event = event[event.length - 1] === 'e' ? event + 'd' : event + 'ed';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var msg = [util.colors.magenta(file.relative), 'was', event];</span>
+<span class="cstat-no" title="statement not covered">		var msg = [util.colors.magenta(file.relative), 'was', event];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		if (opts.name) {</span>
-<span class="cstat-no" title="statement not covered" >			msg.unshift(util.colors.cyan(opts.name) + ' saw');</span>
+<span class="cstat-no" title="statement not covered">		if (opts.name) {</span>
+<span class="cstat-no" title="statement not covered">			msg.unshift(util.colors.cyan(opts.name) + ' saw');</span>
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		util.log.apply(util, msg);</span>
+<span class="cstat-no" title="statement not covered">		util.log.apply(util, msg);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return outputStream;</span>
+<span class="cstat-no" title="statement not covered">	return outputStream;</span>
 }
 &nbsp;
 // This is not part of the public API as that would lead to global state (singleton) pollution,
@@ -743,10 +741,11 @@ watch._defaultOptions = {
 module.exports = watch;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 22:23:29 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
