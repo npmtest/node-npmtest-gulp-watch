@@ -1,6 +1,6 @@
 # npmtest-gulp-watch
 
-#### test coverage for  [gulp-watch (v4.3.11)](https://github.com/floatdrop/gulp-watch#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-gulp-watch.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-gulp-watch) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-gulp-watch.svg)](https://travis-ci.org/npmtest/node-npmtest-gulp-watch)
+#### basic test coverage for  [gulp-watch (v4.3.11)](https://github.com/floatdrop/gulp-watch#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-gulp-watch.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-gulp-watch) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-gulp-watch.svg)](https://travis-ci.org/npmtest/node-npmtest-gulp-watch)
 
 #### Watch, that actually is an endless stream
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-gulp-watch/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-gulp-watch/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-gulp-watch/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-gulp-watch/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-gulp-watch/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-gulp-watch/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-gulp-watch/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-gulp-watch/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-gulp-watch/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-gulp-watch/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-gulp-watch/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-gulp-watch/build/coverage.html/index.html)
 
@@ -104,7 +104,8 @@
         "coveralls": "istanbul cover _mocha --report lcovonly -- -r test/util/set-default-options -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
         "test": "xo && mocha -r test/util/set-default-options -R spec test/test-*"
     },
-    "version": "4.3.11"
+    "version": "4.3.11",
+    "bin": {}
 }
 ```
 
